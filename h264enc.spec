@@ -1,15 +1,24 @@
 Summary:	Shell script for encoding DVDs or video files to the H.264 format
 Summary(pl.UTF-8):	Skrypt powłoki do konwersji płyt DVD i plików wideo do formatu H.264
 Name:		h264enc
-Version:	8.7.0
+Version:	9.3.4
 Release:	0.1
 License:	GPL v2
-Group:		Applications/Console
-Source0:	http://dl.sourceforge.net/h264enc/%{name}-%{version}.tar.gz
-# Source0-md5:	5533ab63f879252feb574b56dc811c0a
+Group:		Applications/Multimedia
+Source0:	http://downloads.sourceforge.net/h264enc/%{name}-%{version}.tar.gz
+# Source0-md5:	ef93941ae0c6a987e03ba07ed2a2a290
 URL:		http://sourceforge.net/projects/h264enc/
 Requires:	bash
+Requires:	coreutils
 Requires:	mencoder
+Suggests:	bc
+Suggests:	faac
+Suggests:	flac
+Suggests:	gpac
+Suggests:	mplayer
+Suggests:	vorbis-tools
+Suggests:	x264
+# lsdvd dvdxchap mkvmerge neroAacEnc ogmmerge tsMuxeR pv
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,8 +37,6 @@ front-endem CLI do mencodera.
 %prep
 %setup -q
 
-%build
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
@@ -43,7 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/AUTHORS doc/ChangeLog doc/README.encoding doc/README.h264enc doc/README.matrices doc/preset.cfg
-%doc matrices/*
+%doc doc/{AUTHORS,ChangeLog,README.encoding,README.h264enc,README.matrices,preset.cfg} matrices
 %attr(755,root,root) %{_bindir}/h264enc
 %{_mandir}/man1/h264enc.1*
