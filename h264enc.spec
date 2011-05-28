@@ -1,12 +1,12 @@
 Summary:	Shell script for encoding DVDs or video files to the H.264 format
 Summary(pl.UTF-8):	Skrypt powłoki do konwersji płyt DVD i plików wideo do formatu H.264
 Name:		h264enc
-Version:	9.3.6
+Version:	9.3.7
 Release:	0.1
 License:	GPL v2
 Group:		Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/h264enc/%{name}-%{version}.tar.gz
-# Source0-md5:	53d705515d5e3c162ae25858fd7c9026
+# Source0-md5:	1589bd55626aa1da2053559d777f5123
 URL:		http://sourceforge.net/projects/h264enc/
 Requires:	bash
 Requires:	coreutils
